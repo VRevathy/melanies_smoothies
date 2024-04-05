@@ -24,7 +24,7 @@ st.write('The name on your smoothie will be:', name_on_order)
 
 # Display the Fruit Options List in Your Stramlit in Snowflake(Sis) APP
 session = get_active_session()
-cnx=st.connection("snowflake")
+cnx=st.experimental_connection("snowflake")
 session=cnx.session()
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
 #st.dataframe(data=my_dataframe, use_container_width=True)
